@@ -1,2 +1,3 @@
-# aritificial-potential-field
-Artificial Potential Field for path planning
+# Artificial Potential Field for path planning
+
+Description will be added soon, gotta sleep :)
