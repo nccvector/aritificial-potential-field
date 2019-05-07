@@ -55,24 +55,25 @@ if __name__ == '__main__':
 
     # Defining agent and goal
     agent = Agent(Position(50, 50), scan_radius=10, possible_moves=30)
-    goal = Goal(Position(450, 450), sigma=world_size[0]*world_size[1])
+    goal = Goal(Position(450, 450), sigma=math.sqrt(world_size[0]**2 + world_size[1]**2))
 
     # Defining obstacles in a list
     sigma_obstacles = 5
-    obstacles = [Obstacle(Position(250, 180), sigma=sigma_obstacles), 
-                Obstacle(Position(250, 280), sigma=sigma_obstacles),
-                Obstacle(Position(250, 380), sigma=sigma_obstacles), 
-                Obstacle(Position(350, 180), sigma=sigma_obstacles), 
-                Obstacle(Position(350, 280), sigma=sigma_obstacles), 
-                Obstacle(Position(350, 380), sigma=sigma_obstacles)]
+    obstacles = [Obstacle(Position(250, 180), sigma=sigma_obstacles, draw_radius=4*sigma_obstacles), 
+                Obstacle(Position(250, 280), sigma=sigma_obstacles, draw_radius=4*sigma_obstacles),
+                Obstacle(Position(250, 380), sigma=sigma_obstacles, draw_radius=4*sigma_obstacles), 
+                Obstacle(Position(350, 180), sigma=sigma_obstacles, draw_radius=4*sigma_obstacles), 
+                Obstacle(Position(350, 280), sigma=sigma_obstacles, draw_radius=4*sigma_obstacles), 
+                Obstacle(Position(350, 380), sigma=sigma_obstacles, draw_radius=4*sigma_obstacles)]
 
     # Initializing display with white background and objeccts with their own color
     display = draw(np.ones((world_size[1],world_size[0],3),dtype=np.uint8)*255, agent, goal, obstacles)
 
     # Displaying initial frame and wait for intial key press
     cv2.imshow('Output', display)
-    cv2.waitKey(0)
+    cv2.waitKey(1000)
 
+    n = 0
     while Position.calculate_distance(agent.position, goal.position) > 10:
         possible_moves = agent.get_possible_moves()
         min_value = math.inf
@@ -99,6 +100,8 @@ if __name__ == '__main__':
 
         # Displaying updated frame
         cv2.imshow('Output', display)
+        n += 1
+        cv2.imwrite('./for_gif/' + str(n) + '.jpg', display)
         cv2.waitKey(20)
     
     # Hold on last frame
