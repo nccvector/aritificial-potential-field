@@ -2,8 +2,8 @@
 
 ### Demo:
 
-<img src="demo.gif" align="middle" />
+- Blue => Agent trajectory
+- Red => Obstacle
+- Green => Goal
 
-Blue => Agent trajectory
-Red => Obstacle
-Green => Goal
+<img src="demo.gif" align="middle" />
