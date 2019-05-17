@@ -1,10 +1,14 @@
 """
 Positional script
 
-Contains:
-    Position class
+Contains
+-------
+Class
+    Position
 
-Author: Faizan Ali(nccvector)
+Author
+-------
+Faizan Ali(nccvector)
 
 """
 
@@ -13,16 +17,15 @@ import math
 # Position class for position based calculations
 class Position:
     """
-    Creates a position type object
+    Creates a Position object
+    
+    Parameters
+    ----------
+    x : double
+        x coordinate
+    y : double
+        y coordinate
         
-    Arguments:
-        x {double} -- x coordinate
-        y {double} -- y coordinate
-
-    Contains functions:
-        calculate_distance(position_A, position_B)
-        calculate_distance_squared(position_A, position_B)
-
     """
 
     def __init__(self, x, y):
@@ -33,14 +36,18 @@ class Position:
     # General type function
     def calculate_distance(self, other):
         """
-        Calculates distance between two positions
+        Calculates distance between current position and the position passed as parameter
+        It can also be usedd as static function by specifying class name and giving two parameters
         
-        Arguments:
-            position_A {Position} -- position of first object
-            position_B {Position} -- position of second object
+        Parameters
+        ----------
+        other : Position
+            Position to check distance against
         
-        Returns:
-            double -- distance between two positions
+        Returns
+        -------
+        double
+            Distance value
 
         """
 
@@ -49,15 +56,19 @@ class Position:
     # General type function
     def calculate_distance_squared(self, other):
         """
-        Calculates squared distance between two positions
+        Calculates squared distance between current position and the position passed as parameter
+        It can also be usedd as static function by specifying class name and giving two parameters
         
-        Arguments:
-            position_A {Position} -- position of first object
-            position_B {Position} -- position of second object
+        Parameters
+        ----------
+        other : Position
+            Position to check squared distance against
         
-        Returns:
-            double -- squared distance between two positions
-            
+        Returns
+        -------
+        double
+            Distance value squared
+
         """
 
         return (self.x - other.x)**2 + (self.y - other.y)**2
