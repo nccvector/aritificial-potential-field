@@ -1,17 +1,3 @@
-"""
-Positional script
-
-Contains
--------
-Class
-    Position
-
-Author
--------
-Faizan Ali(nccvector)
-
-"""
-
 import math
 
 # Position class for position based calculations

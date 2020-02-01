@@ -1,23 +1,9 @@
-"""
-Main script
-
-Contains
--------
-Functions
-    draw and __main__
-
-Author
--------
-Faizan Ali(nccvector)
-
-"""
-
 import numpy as np 
 from cv2 import cv2
 import math
 
-from positional import Position
-from objects import *
+from classes.positional import Position
+from classes.objects import *
 
 # Main
 if __name__ == '__main__':

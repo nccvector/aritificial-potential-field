@@ -1,20 +1,6 @@
-"""
-Objects script
-
-Contains
--------
-Classes
-    Agent, Obstacle and Goal
-
-Author
--------
-Faizan Ali(nccvector)
-
-"""
-
 import math
 from cv2 import cv2
-from positional import Position
+from classes.positional import Position
 
 # Agent class for Agent attributes
 class Agent:
